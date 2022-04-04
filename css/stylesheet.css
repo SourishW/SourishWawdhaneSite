@@ -1,0 +1,392 @@
+/*
+
+Lavish HTML CSS Template
+
+https://templatemo.com/tm-458-lavish
+		
+*/
+
+
+body
+{
+	background: #000000;
+	color: #999;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+/* start all section */
+#home,
+#home .fp-slide,
+#home .fp-tableCell,
+
+#work,
+#work .fp-slide,
+#work .fp-tableCell,
+
+#about,
+#about .fp-slide,
+#about .fp-tableCell,
+
+#contact,
+#contact .fp-slide,
+#contact .fp-tableCell,
+
+#portfolio,
+#portfolio .fp-slide,
+#portfolio .fp-tableCell,
+
+footer,
+footer .fp-slide,
+footer .fp-tableCell
+{
+    height: auto !important;
+}
+
+
+
+/* end all section */
+
+/* start all heading */
+h1,h2,h3,h4,h5,h6
+    {
+        color: #ffffff;
+        font-weight: bold;
+    }
+/* end all heading */
+
+/* start all section */
+#work, #about, #portfolio, #contact, #experience, #holskills, #certs, #contacts
+    {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+/* end all section */
+
+/* start home */   
+
+#home img
+    {
+        border-radius: 50%;
+        height: 30%;
+        width: 30%;
+        margin-top: 0%;
+        margin-bottom: 40px;
+    }
+#home
+	{
+        /* background-color: #111; */
+        /* background-color: #101010; */
+        background-color: #101010;
+
+        padding-top: 120px;
+        padding-bottom: 140px;
+        text-align: center;
+	}
+#home h1
+    {
+        /* border: 2px solid #FF7700; */
+        border: 2px solid #FF7700;
+        /* color: #FF7700; */
+        color: #FF7700;
+        display: inline-block;
+        letter-spacing: 6px;
+        padding: 25px 35px;
+        margin: 30px 0;
+    }
+#home h2
+    {
+        padding-bottom: 10px;
+        color:#ffffff
+    }
+#home .btn
+    {
+        background: transparent;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        
+    
+        width: 180px;
+        height: 60px;
+        margin-top: 40px;
+        padding-top: 15px;
+        transition: all 0.4s ease-in-out;
+        scroll-behavior: smooth;
+    }
+#home .btn:hover
+    {
+        color:#FFFFFF;
+        border-color: transparent;
+        background-color: #cc5500;
+        
+    }
+/* end home */
+
+
+/* start experience and education */
+
+
+#experience
+    {
+        background: #1a1a1a;
+        
+    }
+#experience h1, h2, h3
+    {
+        text-align: center
+        
+    }
+
+
+
+
+
+#experience h3 
+    {
+        display: flexbox;
+
+        background-color: #cc5500;
+        border-radius: 10px;
+        
+      
+        padding: 10px;
+    }
+
+#experience li {
+    color: #BBB;
+    margin-bottom: 5x;
+}
+
+.resume-titles h4, .resume-titles h5 {
+    display: inline-block;
+}
+
+
+ 
+
+
+
+
+/* End E and E*/
+
+
+/* start skills and certifications */
+
+#holskills h1, #holskills h2, #holskills h3 {
+    text-align: center;
+}
+#holskills .skills-container, #holskills .language-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    gap: 5px;
+}
+#holskills {
+    background-color: #111111;
+}
+
+
+
+#holskills .skills-container h4 {
+    
+    /* background-color: #cc5500; */
+    background-color: #606060;
+
+    border-radius: 10px;
+    
+  
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+#holskills .language-container h4 {
+    
+    /* background-color: #cc5500; */
+    background-color: #cc5500;
+
+    border-radius: 10px;
+    
+  
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+/* start certifications*/
+
+#certs {
+    background-color: #222222;
+}
+
+#certs h1{
+    text-align: center;
+
+}
+
+#certs .certif-container{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: left;
+
+}
+
+#certs h4, #certs img {
+    display: inline;
+    font-size: 2vw;
+}
+
+@media screen and (min-width: 950px) {
+    #certs h4 {
+       font-size: 14px;
+    }
+  }
+
+#certs a {
+    color: #FFFFFF;
+    background-color: #cc5500;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#certs img{
+    height: 70px;
+    width: 70px;
+    margin: 15px;
+    border-radius: 50%;
+
+}
+
+/* end certifications*/
+
+
+/* end skills and certifications */
+
+
+
+
+/* start portfolio */
+
+
+#portfolio
+    {
+        background: #1a1a1a;
+        text-align: center;
+    }
+
+
+#portfolio h2
+    {
+        padding-bottom: 30px;
+    }
+#portfolio .portfolio-thumb
+    {
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 30px;
+        border-radius: 20px;
+    }
+#portfolio .portfolio-thumb .portfolio-overlay
+    {
+        background: #cc5500;
+        border-radius: 20px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding-top: 60px;
+        transition: all 0.4s ease-in-out;
+    }
+#portfolio .portfolio-thumb:hover .portfolio-overlay
+    {
+        cursor: pointer;
+        opacity: 0.95;
+        transform: scale(0.9);
+    }
+/* end portfolio */
+
+/* start contact */
+
+#contacts .contact-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    gap: 30px;
+}
+#contacts a {
+    background: black;
+    border-radius: 50%;
+}
+#contacts img {
+    width: 10vw;
+    transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+    height: 10vw;
+    border-radius: 50%;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+#contacts a:hover img{
+    opacity: 0.5;
+}
+#contacts h1 {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+/* end contact */
+/* start footer */
+footer
+    {
+        border-top: 1px solid #090909;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+footer hr
+    {
+        width: 100px;
+    }
+/* end footer */
+
+/* start social icon */
+.social-icon
+    {
+        position: relative;
+        padding: 0;
+        margin: 0;
+    }
+.social-icon li
+    {
+        display: inline-block;
+        list-style: none;
+    }
+.social-icon li a
+    {
+        border-radius: 50%;
+        color: #606060;
+        text-decoration: none;
+        transition: all 0.4s ease-in-out;
+        text-align: center;
+        margin-right: 10px;
+    }
+.social-icon li a:hover
+    {
+        color: #D43F52;
+    }
+/* end social icon */
