@@ -1,0 +1,196 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: firaCodeBold;
+  src: url(/ttf/FiraCode-Bold.ttf);
+}
+@font-face {
+  font-family: firaCodeSemiBold;
+  src: url(/ttf/FiraCode-SemiBold.ttf);
+}
+@font-face {
+  font-family: firaCodeMedium;
+  src: url(/ttf/FiraCode-Medium.ttf);
+}
+@font-face {
+  font-family: firaCodeRetina;
+  src: url(/ttf/FiraCode-Retina.ttf);
+}
+@font-face {
+  font-family: firaCodeRegular;
+  src: url(/ttf/FiraCode-Regular.ttf);
+}
+@font-face {
+  font-family: firaCodeLight;
+  src: url(/ttf/FiraCode-Light.ttf);
+}
+body {
+  background-image: linear-gradient(#0b0f37, #360505);
+  background-repeat: repeat-x;
+
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-family: firaCodeBold;
+  color: #f2e9e4;
+  font-size: 50pt;
+}
+h2 {
+  font-family: firaCodeSemiBold;
+  margin-bottom: 80px;
+  color: #f2e9e4;
+  font-size: 35.36pt;
+  line-height: 45pt;
+}
+h3 {
+  font-family: firaCodeSemiBold;
+  color: #f2e9e4;
+  font-size: 25pt;
+  line-height: 40pt;
+}
+h4 {
+  font-family: firaCodeMedium;
+  color: #f2e9e4;
+  font-size: 20.68pt;
+  line-height: 35pt;
+  margin-bottom: 10px;
+}
+h5 {
+  font-family: firaCodeLight;
+  color: #f2e9e4;
+  font-size: 17pt;
+  line-height: 26.6pt;
+}
+h6 {
+  font-family: firaCodeLight;
+  font-size: 13pt;
+  line-height: 20.6pt;
+  margin-top: 0;
+}
+ul {
+  margin: 0;
+  padding-left: 16.5px;
+}
+section {
+  margin: 20vh 10%;
+}
+.grellow {
+  color: #ccc5b9;
+}
+.red {
+  color: #ff4d27;
+}
+.orange {
+  color: #ed8c57;
+}
+.techStackHolder {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.techStackHolder img {
+  margin-left: 0;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  height: 60px;
+}
+.project {
+  overflow: hidden;
+  margin: 10px;
+  margin-left: 0;
+  margin-right: 20px;
+  padding: 30px;
+  display: flex;
+  flex-basis: 35%;
+  flex-grow: 1;
+
+  background-image: linear-gradient(#ffffff10, #908d8d10);
+}
+
+.sourishDescribe a {
+  transition: background-color 0.16s ease-in;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-right: 30px;
+  font-size: 20pt;
+  color: white;
+  background-color: #b93a1d;
+  border-width: 0px;
+  font-family: firaCodeMedium;
+  text-decoration: none;
+  line-height: 100px;
+}
+
+.sourishDescribe a:hover {
+  transition: all 0.2s ease-in;
+  background-color: #ff4d27;
+}
+
+.sourishDescribe div {
+  margin-top: 70px;
+}
+
+.project h5 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project h6 {
+  font-size: 10pt;
+  line-height: 15.6pt;
+  margin-top: 0;
+}
+
+.project img {
+  width: 300px;
+  height: 250px;
+  margin-right: 40px;
+  border-radius: 17px;
+}
+
+.project a {
+  background-color: #df5e19;
+  border-radius: 15px;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  font-family: firaCodeMedium;
+  color: #f2e9e4;
+  font-size: 12pt;
+}
+
+.project div {
+  margin-right: 10px;
+}
+
+.projectHolder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1500px) {
+  .project {
+    flex-wrap: wrap;
+    text-align: justify;
+    justify-content: center;
+  }
+  .project h5 {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .project img {
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 2240px) {
+  .project {
+    flex-basis: 27%;
+  }
+}
