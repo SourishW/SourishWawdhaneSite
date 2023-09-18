@@ -194,3 +194,7 @@ section {
     flex-basis: 27%;
   }
 }
+
+.initiallyHide {
+  visibility: hidden;
+}
