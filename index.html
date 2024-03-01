@@ -1,295 +1,429 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sourish Wawdhane - Software Engineer | Electrical and Computer Engineering Student">
-    <meta name="keywords" content="Sourish Wawdhane, Software Engineer, Electrical and Computer Engineering, UT Austin, Projects">
-    <meta name="author" content="Sourish Wawdhane">
-    <meta name="robots" content="index, follow">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sourish Wawdhane - Software Engineer | Electrical and Computer Engineering Student" />
+    <meta
+      name="keywords"
+      content="Sourish Wawdhane, Software Engineer, Electrical and Computer Engineering, UT Austin, Projects" />
+    <meta name="author" content="Sourish Wawdhane" />
+    <meta name="robots" content="index, follow" />
     <title>Sourish Wawdhane</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="fira_code.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="fira_code.css" />
     <script src="script.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="sourishDescribe">
-        <h1 id="sourishDescribeIntroduce">
-            
-        </h1>
-        <h3 class="initiallyHide">
-            <span class="red">>>></span> <span class="grellow">
-                Hi! I'm Sourish Wawdhane. I'm a software engineer who enjoys coding at all levels of abstraction.</span>
-        </h3>
-        <h5 class="initiallyHide">
-            I've worked on a variety of different projects, from writing low level drivers for embedded systems projects, to creating full stack applications hosted on cloud.
-            I currently study Electrical and Computer Engineering at UT Austin (Graduating Spring 2025).
-        </h5>
-        <div class="initiallyHide">
-           <!-- <a target="_blank" href="/Sourish Wawdhane Resume.pdf">Resume</a> -->
-            <a href="#projects">Projects</a>
-            <a target="_blank" href="https://www.linkedin.com/in/sourishw">Contact</a>
-
-        </div>
-
-
+      <h1 id="sourishDescribeIntroduce"></h1>
+      <h3 class="initiallyHide">
+        <span class="red">>>></span>
+        <span class="grellow">
+          Hi! I'm Sourish Wawdhane. I'm a software engineering student who enjoys coding at
+          all levels of abstraction.</span
+        >
+      </h3>
+      <h5 class="initiallyHide">
+        I've worked on a variety of different projects, from developing web
+        tools used by thousands of students at UT Austin, to writing low level
+        drivers for embedded systems projects. I currently study Electrical and
+        Computer Engineering at UT Austin.
+      </h5>
+      <div class="initiallyHide">
+        <!-- <a target="_blank" href="/Sourish Wawdhane Resume.pdf">Resume</a> -->
+        <a href="#projects">Projects</a>
+        <a target="_blank" href="https://www.linkedin.com/in/sourishw"
+          >Contact</a
+        >
+      </div>
     </section>
     <section class="initiallyHide">
-        <h1 class="grellow">Education</h1>
-        <br>
-        <h3 class="orange" style="line-height: 1;">The University of Texas at Austin</h3>
-        <h4>Bachelor of Electrical and Computer Engineering, 2021 - 2025</h4>
-        <h6 class="grellow">
+      <h1 class="grellow">Education</h1>
+      <br />
+      <h3 class="orange" style="line-height: 1">
+        The University of Texas at Austin
+      </h3>
+      <h4>Bachelor of Electrical and Computer Engineering, 2021 - 2025</h4>
+      <h6 class="grellow">
+        <ul>
+          <li><b> Engineering Honors, GPA 3.93</b></li>
+          <li>
+            T. W. Whaley, Jr. Friends of Alec Endowed Engineering Award
+            Recipient.
+          </li>
+          <li>
+            Relevant Engineering Coursework:
             <ul>
-                <li>Engineering Honors, GPA 3.97
-                </li>
-                <li> T. W. Whaley, Jr. Friends of Alec Endowed Engineering Award Recipient.
+              <li>
+                <b>Compilers:</b>
+                Program compilation from high-level into machine languages. Code
+                generation, intermediate representation, control and data flow
+                analysis, and optimization.
+              </li>
+              <li>
+                <b>Computer Architecture (ECE 460N):</b>
+                Overarching course covering ISAs, physical and virtual memory,
+                caches, arithmetic, pipelining, out of order execution, and
+                branch prediction.
+              </li>
+              <li>
+                <b>Operating Systems:</b>
+                OS design and implementation, covering virtualization,
+                concurrency, persistence, and security. Projects coded in C.
+              </li>
+              <li>
+                <b>Algorithms:</b>
+                Combinatorial algorithms, proof-based reasoning, asymptotic
+                complexity, algorithm design principles, data strutures, and NP
+                completeness.
+              </li>
+              <li>
+                <b> Software Design and Implementation I, II, & Lab:</b>
+                Data structures, algorithms, & programming in C, C++ (in I),
+                Java (in II), and full stack development in React and Python (in
+                Lab).
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </h6>
+      <br />
+    </section>
+    <section class="initiallyHide">
+      <h1 class="grellow">Relevant Experience</h1>
+      <br />
+      <!-- GXC START -->
+      <h3 class="orange" style="line-height: 1.5">GXC Incorporated</h3>
+      <h4>Software Engineering Intern, May 2023 -> August 2023</h4>
+      <h6 class="grellow">
+        <ul>
+          <li>
+            Engineered a dashboard of tests characterizing 30+ metrics for GXC’s
+            private cellular product GM01. (Python)
+          </li>
+          <li>
+            Saved manual throughput-related testing time, cutting single test
+            time from 30 hours to 40 minutes.
+          </li>
+          <li>
+            Performed root cause analysis of a previously undiscovered
+            networking failure in the Gateway Access Point.
+          </li>
+          <li>
+            Reverse-engineered an authenticated REST API for a web dashboard
+            provided by Baicells (GXC’s access gateway).
+          </li>
+          <li>
+            Created a software library for automatic configuration in Python via
+            web scraping.
+          </li>
+        </ul>
+      </h6>
+      <!-- GXC END -->
+      <br />
+      <!-- EXPO START -->
+      <h3 class="orange" style="line-height: 1.5">
+        Engineering Expo Committee (Cockrell School of Engineering, UT Austin)
+      </h3>
+      <h6 class="grellow">
+        6000+ students and 100s of employers attend UT Austin’s Engineering Expo
+        career fair each year, and the committee organizes and plans all
+        components of this event.
+      </h6>
+      <h4>Director, February 2024 -> Present</h4>
+      <h6 class="grellow">
+        <ul>
+          <li>
+            Executive student point of contact for all Engineering Expo related
+            decisions, managing a half a million dollar budget.
+          </li>
+          <li>
+            Lead a team of 25 committee members, organizing activity across all
+            subcomittees/teams.
+          </li>
+        </ul>
+      </h6>
+      <h4>Publicity and Web Division Lead, February 2022 -> September 2022</h4>
+      <h6 class="grellow">
+        <ul>
+          <li>
+            Led a social media strategy leading to 30,000+ content impressions,
+            leading to greater student awareness about the Engineering Expo
+            career fair.
+          </li>
+          <li>
+            Authored comprehensive documentation and maintenance guides, as well
+            as a step-by-step tutorial for SSH terminal access and Git
+            protocols, facilitating team members' efforts to manage the site
+            effectively.
+          </li>
+          <li>
+            Oversaw a team of 5 members performing information coverage for the
+            events up to and including Engineering Expo.
+          </li>
+        </ul>
+      </h6>
+      <h4>
+        Publicity and Web Division Member, February 2022 -> September 2022
+      </h4>
+      <h6 class="grellow">
+        <ul>
+          <li>
+            Coded the website informing students and employers about the career
+            fair, help coordinate event logistics, and created social media
+            content up to and during the event.
+          </li>
+          <li>
+            Landing Site Link:
+            <a class="orange" href="https://expo.engr.utexas.edu/"
+              >expo.engr.utexas.edu</a
+            >
+          </li>
+        </ul>
+      </h6>
+      <!-- EXPO END -->
+      <br />
+      <!-- GUADALOOP START -->
+      <h3 class="orange" style="line-height: 1.5">Texas Guadaloop</h3>
+      <h4>Embedded Systems Engineer, October 2022 -> October 2023</h4>
+      <h6 class="grellow">
+        <ul>
+          <li>
+            Engineer and write C/C++ drivers for sensors, motors, and
+            electronics aboard the pod.
+          </li>
+          <li>
+            Collaborate with software and hardware engineers to develop complete
+            embedded solutions for the UT Hyperloop Pod.
+          </li>
+          <li>
+            Learn about the project:
+            <a class="orange" href="https://www.guadaloop.com/"
+              >guadaloop.com</a
+            >
+          </li>
+        </ul>
+      </h6>
+      <!-- GUADALOOP END -->
+
+      <br />
+      <!-- HKEC START -->
+      <h3 class="orange" style="line-height: 1.5">
+        Herb Kelleher Entrepreneurship Center (UT Austin)
+      </h3>
+      <h4>Student Associate, Aug '22 -> Present</h4>
+      <h6 class="grellow">
+        <ul>
+          <li>
+            Perform web development for the HKEC Wordpress site, including
+            writing pages and implementing changes.
+          </li>
+          <li>
+            Orchestrate event logistics for networking and professional events
+            for McCombs School of Business.
+          </li>
+          <li>
+            Coordinate administrative work, including maintaining a CRM
+            database.
+          </li>
+        </ul>
+      </h6>
+      <!-- HKEC END -->
+    </section>
+    <!-- <section class="initiallyHide">
+      <h2 class="grellow">Skills & Frameworks</h2>
+      <div class="techStackHolder">
+        <img src="/imageAssets/techStackImages/aws (3).png" alt="AWS Logo" />
+        <img src="/imageAssets/techStackImages/react.png" alt="React Logo" />
+        <img src="/imageAssets/techStackImages/Nodejs.png" alt="NodeJS Logo" />
+        <img src="/imageAssets/techStackImages/python.png" alt="Python Logo" />
+        <img src="/imageAssets/techStackImages/java.png" alt="Java Logo" />
+        <img
+          src="/imageAssets/techStackImages/sklearn.png"
+          alt="Sklearn Logo" />
+        <img src="/imageAssets/techStackImages/CPP.png" alt="Cpp Logo" />
+      </div>
+    </section> -->
+    <section class="initiallyHide" style="margin-bottom: 60px">
+      <h2 class="grellow" id="projects">Projects</h2>
+      <div class="projectHolder">
+        <div class="project">
+          <img src="/imageAssets/projectImages/engrexpo.png" alt="AWS Logo" />
+          <div>
+            <h5>Engineering Expo Site</h5>
+            <h6 class="grellow">
+              <ul>
+                <li>
+                  Landing site for Engineering Expo, the fall career fair for UT
+                  Austin’s Cockrell School of Engineering with 6000+ students,
+                  and 100s of companies.
                 </li>
                 <li>
-                    Relevant Engineering Coursework:
-                    <ul>
-                        <li>
-                            Operating Systems: OS design and implementation, covering virtualization, concurrency, persistence, 
-                            and security. Projects coded in C.
-                        </li>
-                        <li>Software Design and Implementation I & II: Data structures, algorithms, & programming in C,
-                            C++ (in I), and Java (in II).
-                        </li>
-                        <li>Introduction to Computing: Introductory computer architecture and assembly language
-                            programming.
-                        </li>
-                        <li>Introduction to Embedded Systems: Programming in assembly, C, and C++, engineering of embedded systems
-                            including IO and circuits.
-                        </li>
-                    </ul>
+                  Site provides pertinent info for students and employers
+                  attending Expo.
                 </li>
-            </ul>
-        </h6>
-        <br>
-    </section>
-    <section class="initiallyHide">
-        <h1 class="grellow">Relevant Experience</h1>
-        <br>
-        <!-- GXC START -->
-        <h3 class="orange" style="line-height: 1.5;">GXC Incorporated</h3>
-        <h4>Incoming Software Engineering Intern, Summer 2023</h4>
-        <h6 class="grellow">
-            <ul>
-                <li>Development of code for system configuration & health checks, written in Python, running on Linux in GXC's mesh node relay.</li>
-                
+                <li>Developed using HTML and CSS.</li>
+              </ul>
+            </h6>
+            <center>
+              <a href="https://expo.engr.utexas.edu/" target="_blank">
+                expo.engr.utexas.edu
+              </a>
+            </center>
+          </div>
+        </div>
 
-            </ul>
-        </h6>
-        <!-- GXC END -->
-        <br>
-        <!-- GUADALOOP START -->
-        <h3 class="orange" style="line-height: 1.5;">Texas Guadaloop</h3>
-        <h4>Embedded Systems Engineer, Oct '22 -> Present</h4>
-        <h6 class="grellow">
-            <ul>
-                <li>Engineer and write C/C++ drivers for sensors, motors, and electronics aboard the pod.  </li>
-                <li>Collaborate with software and hardware engineers to develop complete embedded solutions for the UT Hyperloop Pod.  </li>
-                <li>Learn about the project: <a class="orange" href="https://www.guadaloop.com/">guadaloop.com</a>
-                </li>
-
-            </ul>
-        </h6>
-        <!-- GUADALOOP END -->
-        <br>
-        <!-- EXPO START -->
-        <h3 class="orange" style="line-height: 1.5;">Engineering Expo Committee (Cockrell School of Engineering, UT
-            Austin)</h3>
-        <h4>Publicity and Web Division Member, Feb '22 -> Present</h4>
-        <h6 class="grellow">
-            <ul>
-                <li>6000+ students and 100s of employers attend UT Austin’s Engineering Expo career fair
-                    each year.
-                </li>
-                <li> The Engineering Expo organizes and plans all components of this Expo.
-                </li>
-                <li>I code web platforms informing students and employers about the career fair, help coordinate event
-                    logistics, and
-                    organize
-                    media outreach for the event.
-                </li>
-                <li>Landing Site Link: <a class="orange" href="https://expo.engr.utexas.edu/">expo.engr.utexas.edu</a>
-                </li>
-            </ul>
-        </h6>
-        <!-- EXPO END -->
-
-        <br>
-        <!-- HKEC START -->
-        <h3 class="orange" style="line-height: 1.5;">Herb Kelleher Entrepreneurship Center (McCombs School of Business,
-            UT
-            Austin)</h3>
-        <h4>Student Associate, Aug '22 -> Present</h4>
-        <h6 class="grellow">
-            <ul>
+        <div class="project">
+          <img
+            src="/imageAssets/projectImages/ServiceLocker.png"
+            alt="Service Locker Logo" />
+          <div>
+            <h5>Service Locker</h5>
+            <h6 class="grellow">
+              <ul>
                 <li>
-                    Perform web development for the HKEC Wordpress site, including writing pages and implementing changes.
+                  Implemented a management dashboard to track large numbers of
+                  APIs exposed in backend services and across environments.
                 </li>
-                <li>Orchestrate event logistics for networking and professional events for McCombs School of Business.
-
+                <li>
+                  Backend features authenticated data retrieval using the MSAL
+                  and Azure AD to sign in and authorize users.
                 </li>
-                <li>Coordinate administrative work, including maintaining a CRM database.
+                <li>
+                  Integrates Microsoft Graph for Office 365 API, developed using
+                  React, Javascript, CSS, HTML, and deployed on Microsoft Azure.
                 </li>
-
-
-            </ul>
-        </h6>
-        <!-- HKEC END -->
-
-        
-        
-    </section>
-    <section class="initiallyHide">
-        <h2 class="grellow">Skills & Frameworks</h2>
-        <div class="techStackHolder">
-            <img src="/imageAssets/techStackImages/aws (3).png" alt="AWS Logo">
-            <img src="/imageAssets/techStackImages/react.png" alt="React Logo">
-            <img src="/imageAssets/techStackImages/Nodejs.png" alt="NodeJS Logo">
-            <img src="/imageAssets/techStackImages/python.png" alt="Python Logo">
-            <img src="/imageAssets/techStackImages/java.png" alt="Java Logo">
-            <img src="/imageAssets/techStackImages/sklearn.png" alt="Sklearn Logo">
-            <img src="/imageAssets/techStackImages/CPP.png" alt="Cpp Logo">
+              </ul>
+            </h6>
+            <center>
+              <a href="https://youtu.be/bHYdCf4uRP8" target="_blank">
+                youtu.be/bHYdCf4uRP8
+              </a>
+            </center>
+          </div>
         </div>
-    </section>
-    <section class="initiallyHide" style="margin-bottom: 60px;">
-        <h2 class="grellow" id="projects">Projects</h2>
-        <div class="projectHolder">
-            <div class="project">
-                <img src="/imageAssets/projectImages/engrexpo.png" alt="AWS Logo">
-                <div>
-                    <h5>Engineering Expo Site</h5>
-                    <h6 class="grellow">
-                        <ul>
-                            <li>Landing site for Engineering Expo, the fall career fair for UT Austin’s Cockrell School
-                                of Engineering with 6000+ students, and 100s of companies.</li>
-                            <li>Site provides pertinent info for students and employers attending Expo.</li>
-                            <li>Developed using HTML and CSS.</li>
-                        </ul>
-                    </h6>
-                    <center>
+        <div class="project">
+          <img
+            src="/imageAssets/projectImages/PVPTanksIcon.png"
+            alt="PVP Tanks Icon" />
+          <div>
+            <h5>PVP Tanks (Embedded System)</h5>
+            <h6 class="grellow">
+              <ul>
+                <li>
+                  Constructed a handheld two-player tanks game for TI TM4C using
+                  ARM and C/C++, designed constrained to limited ROM (<128KB).<
+                  /li>
+                </li>
 
-                        <a href="https://expo.engr.utexas.edu/" target="_blank">
-                            expo.engr.utexas.edu
-                        </a>
-
-                    </center>
-                </div>
-
-            </div>
-
-            <div class="project">
-                <img src="/imageAssets/projectImages/ServiceLocker.png" alt="Service Locker Logo">
-                <div>
-                    <h5>Service Locker</h5>
-                    <h6 class="grellow">
-                        <ul>
-                            <li>Implemented a management dashboard to track large numbers of APIs exposed in backend
-                                services and across environments.</li>
-                            <li>Backend features authenticated data retrieval using the MSAL and Azure AD to sign in and
-                                authorize users.</li>
-                            <li>Integrates Microsoft Graph for Office 365 API, developed using React, Javascript, CSS,
-                                HTML, and deployed on Microsoft Azure.</li>
-                        </ul>
-                    </h6>
-                    <center>
-
-                        <a href="https://youtu.be/bHYdCf4uRP8" target="_blank">
-                            youtu.be/bHYdCf4uRP8
-                        </a>
-
-                    </center>
-                </div>
-            </div>
-            <div class="project">
-                <img src="/imageAssets/projectImages/PVPTanksIcon.png" alt="PVP Tanks Icon">
-                <div>
-                    <h5>PVP Tanks (Embedded System)</h5>
-                    <h6 class="grellow">
-                        <ul>
-                            <li>Constructed a handheld two-player tanks game for TI TM4C using ARM and C/C++, designed
-                                constrained to limited ROM (<128KB).< /li>
-                            <li>Developed drivers for timer-triggered digital to analog
-                                audio output, an LCD screen, two analog, and four digital user inputs.</li>
-                            <li>Designed game logic
-                                to manage sprites including tanks, bullets, and score, engineered event triggered audio
-                                output.</li>
-                        </ul>
-                    </h6>
-                    <center>
-
-                        <a href="https://youtu.be/W4_69AYKkgw" target="_blank">
-                            youtu.be/W4_69AYKkgw
-                        </a>
-
-                    </center>
-                </div>
-            </div>
-
-            <div class="project">
-                <img src="/imageAssets/projectImages/QSupport Picture.png" alt="Quarantine Support Application Logo">
-                <div>
-                    <h5>Quarantine Support</h5>
-                    <h6 class="grellow">
-                        <ul>
-                            <li>Engineered a COVID risk assessment and medical contact application for detection and
-                                treatment of elevated COVID symptoms </li>
-                            <li> Expedited doctor-patient communication through chat/email portal and hospital locator
-                                tool</li>
-                            <li> Contributes facets of entertainment and mindful guidance, protected by a local login
-                                verification system.</li>
-                        </ul>
-                    </h6>
-                    <center>
-                        <a href="https://devpost.com/software/quarantine-support-application"
-                            target="_blank">QSupport-Devpost</a>
-                    </center>
-                </div>
-            </div>
-            <div class="project">
-                <img src="/imageAssets/projectImages/TrafficLightPhoto.png" alt="Traffic Light Photo">
-                <div>
-                    <h5> Traffic Light Board Simulation System
-                    </h5>
-                    <h6 class="grellow">
-                        <ul>
-                            <li>Constructed functional bidirectional traffic light system with sensor-informed cycling
-                                and pedestrian-responsive waits.</li>
-                            <li>Developed using Moore finite state machine, TM4C123 Microcontroller, and coded in C and
-                                ARM Assembly.</li>
-                            <li>
-                                Simulation includes pedestrian crossing indicators (LEDs), sensors (Switches) and cycles
-                                through traffic without exhaustion.
-                            </li>
-                        </ul>
-
-                    </h6>
-                </div>
-            </div>
-            <div class="project">
-                <img src="/imageAssets/projectImages/IntersectionProjectTeaser.png" alt="AWS Logo">
-                <div>
-                    <h5>Self Driving Car Intersection Management System</h5>
-                    <h6 class="grellow">
-                        I'm currently developing a project exploring different algorithms for managing autonomous
-                        intersections. Link updated soon!
-                    </h6>
-                </div>
-            </div>
-
-
+                <li>
+                  Developed drivers for timer-triggered digital to analog audio
+                  output, an LCD screen, two analog, and four digital user
+                  inputs.
+                </li>
+                <li>
+                  Designed game logic to manage sprites including tanks,
+                  bullets, and score, engineered event triggered audio output.
+                </li>
+              </ul>
+            </h6>
+            <center>
+              <a href="https://youtu.be/W4_69AYKkgw" target="_blank">
+                youtu.be/W4_69AYKkgw
+              </a>
+            </center>
+          </div>
         </div>
+
+        <div class="project">
+          <img
+            src="/imageAssets/projectImages/QSupport Picture.png"
+            alt="Quarantine Support Application Logo" />
+          <div>
+            <h5>Quarantine Support</h5>
+            <h6 class="grellow">
+              <ul>
+                <li>
+                  Engineered a COVID risk assessment and medical contact
+                  application for detection and treatment of elevated COVID
+                  symptoms
+                </li>
+                <li>
+                  Expedited doctor-patient communication through chat/email
+                  portal and hospital locator tool
+                </li>
+                <li>
+                  Contributes facets of entertainment and mindful guidance,
+                  protected by a local login verification system.
+                </li>
+              </ul>
+            </h6>
+            <center>
+              <a
+                href="https://devpost.com/software/quarantine-support-application"
+                target="_blank"
+                >QSupport-Devpost</a
+              >
+            </center>
+          </div>
+        </div>
+        <div class="project">
+          <img
+            src="/imageAssets/projectImages/TrafficLightPhoto.png"
+            alt="Traffic Light Photo" />
+          <div>
+            <h5>Traffic Light Board Simulation System</h5>
+            <h6 class="grellow">
+              <ul>
+                <li>
+                  Constructed functional bidirectional traffic light system with
+                  sensor-informed cycling and pedestrian-responsive waits.
+                </li>
+                <li>
+                  Developed using Moore finite state machine, TM4C123
+                  Microcontroller, and coded in C and ARM Assembly.
+                </li>
+                <li>
+                  Simulation includes pedestrian crossing indicators (LEDs),
+                  sensors (Switches) and cycles through traffic without
+                  exhaustion.
+                </li>
+              </ul>
+            </h6>
+          </div>
+        </div>
+        <div class="project">
+          <img
+            src="/imageAssets/projectImages/IntersectionProjectTeaser.png"
+            alt="AWS Logo" />
+          <div>
+            <h5>Self Driving Car Intersection Management System</h5>
+            <h6 class="grellow">
+              I'm currently developing a project exploring different algorithms
+              for managing autonomous intersections. Link updated soon!
+            </h6>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer style="display: flex; background-color: #0c0909; height: 100%; width: 100%; justify-content: center;">
-        <h6 class="grellow" style="margin: 0; margin-top: 20px; margin-bottom: 20px;"> Copyright © 2022 Sourish Wawdhane
-        </h6>
+    <footer
+      style="
+        display: flex;
+        background-color: #0c0909;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+      ">
+      <h6
+        class="grellow"
+        style="margin: 0; margin-top: 20px; margin-bottom: 20px">
+        Copyright © 2022 Sourish Wawdhane
+      </h6>
     </footer>
-</body>
-
+  </body>
 </html>

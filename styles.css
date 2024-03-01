@@ -70,6 +70,11 @@ h6 {
   line-height: 20.6pt;
   margin-top: 0;
 }
+
+b {
+  color: #ed8c57;
+}
+
 ul {
   margin: 0;
   padding-left: 16.5px;
