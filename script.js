@@ -1,16 +1,16 @@
-function createDescribeInner(sourishName, describe) {
-  return `${sourishName}<wbr><span class="red">${describe}</span>`;
+function createDescribeInner(RishName, describe) {
+  return `${RishName}<wbr><span class="red">${describe}</span>`;
 }
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 window.addEventListener("load", function () {
-  const introduce = document.getElementById("sourishDescribeIntroduce");
-  const introduceTextName = "Sourish";
+  const introduce = document.getElementById("RishDescribeIntroduce");
+  const introduceTextName = "Rish";
   const introduceKeywordInner = ".introduce();";
 
-  let introduceSourishIncomplete = "";
+  let introduceRishIncomplete = "";
   let dotIntroduceIncomplete = "";
 
   let i = 0;
@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
 
   function updateIntroduce() {
     if (i < introduceTextName.length) {
-      introduceSourishIncomplete = introduceTextName.substring(0, i + 1);
+      introduceRishIncomplete = introduceTextName.substring(0, i + 1);
       i++;
     } else if (j < introduceKeywordInner.length) {
       dotIntroduceIncomplete = introduceKeywordInner.substring(0, j + 1);
@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
           }
         );
         introduce.innerHTML = createDescribeInner(
-          introduceSourishIncomplete,
+          introduceRishIncomplete,
           dotIntroduceIncomplete
         );
       });
@@ -40,7 +40,7 @@ window.addEventListener("load", function () {
       return;
     }
     introduce.innerHTML = createDescribeInner(
-      introduceSourishIncomplete,
+      introduceRishIncomplete,
       dotIntroduceIncomplete + "|"
     );
     console.log("still here");

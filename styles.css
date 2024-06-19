@@ -115,7 +115,7 @@ section {
   background-image: linear-gradient(#ffffff10, #908d8d10);
 }
 
-.sourishDescribe a {
+.RishDescribe a {
   transition: background-color 0.16s ease-in;
   padding: 20px;
   padding-left: 30px;
@@ -130,12 +130,12 @@ section {
   line-height: 100px;
 }
 
-.sourishDescribe a:hover {
+.RishDescribe a:hover {
   transition: all 0.2s ease-in;
   background-color: #ff4d27;
 }
 
-.sourishDescribe div {
+.RishDescribe div {
   margin-top: 70px;
 }
 
