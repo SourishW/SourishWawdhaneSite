@@ -1,71 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sa Pitch Matcher</title>
 <style>
   * {
-    font-weight: bold; /* Make ALL text bold */
-  }
+  font-weight: bold;
+  box-sizing: border-box;
+}
 
-  button {
-    height: 60px;
-    font-size: 20px;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
+body { 
+  font-family: Arial; 
+  text-align: center; 
+  padding: 20px; 
+  background: #f4f4f4;
+  margin: 0;
+}
 
-  /* Button colors */
-  #startBtn {
-    background: green;
-  }
+/* Make titles responsive */
+h1 {
+  font-size: clamp(24px, 5vw, 40px);
+}
 
-  #playBtn {
-    background: white;
-    color: black;
-  }
+/* Responsive buttons */
+button {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding: 12px 20px;
+  margin: 10px auto;
+  font-size: clamp(16px, 4vw, 22px);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
 
-  #stopBtn {
-    background: red;
-  }
+/* Button colors */
+#startBtn { background: green; color: white; }
+#playBtn { background: white; color: black; border: 2px solid #444; }
+#stopBtn { background: red; color: white; }
 
-  body { 
-    font-family: Arial; 
-    text-align: center; 
-    padding: 30px; 
-    background: #f4f4f4;
-  }
+/* Text values */
+#pitch { 
+  font-size: clamp(28px, 6vw, 48px);
+  margin-top: 20px; 
+}
+#status { 
+  font-size: clamp(20px, 5vw, 32px);
+  margin-top: 10px; 
+}
 
-  #pitch { font-size: 48px; margin-top: 20px; }
-  #status { font-size: 32px; margin-top: 10px; }
+/* Slider */
+#sliderContainer {
+  width: 100%;
+  max-width: 500px;
+  height: 20px;
+  background: #ddd;
+  margin: 40px auto;
+  border-radius: 10px;
+  position: relative;
+}
 
-  #sliderContainer {
-    width: 80%;
-    height: 20px;
-    background: #ddd;
-    margin: 40px auto;
-    border-radius: 10px;
-    position: relative;
-  }
+#sliderIndicator {
+  width: 10px;
+  height: 30px;
+  background: red;
+  position: absolute;
+  top: -5px;
+  border-radius: 5px;
+  transition: left 0.1s linear;
+}
 
-  #sliderIndicator {
-    width: 10px;
-    height: 30px;
-    background: red;
-    position: absolute;
-    top: -5px;
-    border-radius: 5px;
-    transition: left 0.1s linear;
-  }
+/* Bottom labels arranged nicely */
+#labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
+  font-size: clamp(14px, 4vw, 22px);
+}
 
-  #labels {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: auto;
-    font-size: 20px;
-  }
+/* Dropdown responsive */
+select {
+  font-size: clamp(16px, 4vw, 20px);
+  padding: 8px;
+  margin-top: 10px;
+}
+
 
 </style>
 </head>
@@ -238,7 +262,7 @@ async function start() {
 
         } else {
             pitchEl.textContent = "Pitch: --";
-            statusEl.textContent = "No Signal";
+            statusEl.textContent = "No Signal (Gao jor se!)";
             statusEl.style.color = "black";
         }
 
