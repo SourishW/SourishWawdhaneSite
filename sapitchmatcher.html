@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sa Pitch Matcher</title>
+<style>
+  * {
+    font-weight: bold; /* Make ALL text bold */
+  }
+
+  button {
+    height: 60px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  /* Button colors */
+  #startBtn {
+    background: green;
+  }
+
+  #playBtn {
+    background: white;
+    color: black;
+  }
+
+  #stopBtn {
+    background: red;
+  }
+
+  body { 
+    font-family: Arial; 
+    text-align: center; 
+    padding: 30px; 
+    background: #f4f4f4;
+  }
+
+  #pitch { font-size: 48px; margin-top: 20px; }
+  #status { font-size: 32px; margin-top: 10px; }
+
+  #sliderContainer {
+    width: 80%;
+    height: 20px;
+    background: #ddd;
+    margin: 40px auto;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  #sliderIndicator {
+    width: 10px;
+    height: 30px;
+    background: red;
+    position: absolute;
+    top: -5px;
+    border-radius: 5px;
+    transition: left 0.1s linear;
+  }
+
+  #labels {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    font-size: 20px;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Sa Pitch Matcher</h1>
+
+<label>Select Sa (C note octave): </label>
+<select id="saSelect">
+  <option value="65.41">C2 (65 Hz)</option>
+  <option value="130.81" selected>C3 (130 Hz)</option>
+  <option value="261.63">C4 (261 Hz) Middle C</option>
+  <option value="523.25">C5 (523 Hz)</option>
+  <option value="1046.50">C6 (1046 Hz)</option>
+</select>
+
+<br><br>
+
+<button id="startBtn" onclick="start()">
+  (Start Listening) Hya Button la press kara singing chaalu karnya saathi
+</button>
+
+<br><br>
+
+<div id="pitch">Pitch: -- Hz</div>
+<div id="status">Status: --</div>
+
+<!-- Slider -->
+<div id="sliderContainer">
+  <div id="sliderIndicator"></div>
+</div>
+
+<div id="labels">
+  <span>Too Low</span>
+  <span>Perfect</span>
+  <span>Too High</span>
+</div>
+
+<br><br>
+
+<!-- Sa play/stop buttons -->
+<button id="playBtn" onclick="playSa()">Sa Aiknyasaathi he button click kara</button>
+<button id="stopBtn" onclick="stopSa()">Sa Thaambnyasaathi he button click kara</button>
+
+<script>
+let audioContextRef = null;
+let oscillator = null;
+
+// ----------------------
+// PLAY SA
+// ----------------------
+function playSa() {
+    const freq = parseFloat(document.getElementById("saSelect").value);
+
+    if (!audioContextRef) {
+        audioContextRef = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    stopSa(); // prevent overlapping tones
+
+    oscillator = audioContextRef.createOscillator();
+    oscillator.frequency.value = freq;
+    oscillator.type = "sine";
+
+    const gain = audioContextRef.createGain();
+    gain.gain.value = 0.2;
+
+    oscillator.connect(gain).connect(audioContextRef.destination);
+    oscillator.start();
+}
+
+// ----------------------
+// STOP SA
+// ----------------------
+function stopSa() {
+    if (oscillator) {
+        oscillator.stop();
+        oscillator = null;
+    }
+}
+
+// ----------------------
+// LISTENING + YIN
+// ----------------------
+async function start() {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const audioContext = new AudioContext();
+    const source = audioContext.createMediaStreamSource(stream);
+
+    const analyser = audioContext.createAnalyser();
+    analyser.fftSize = 2048;
+    const buffer = new Float32Array(analyser.fftSize);
+
+    source.connect(analyser);
+
+    function yin(buf, sampleRate) {
+        const threshold = 0.1;
+        const yinBuffer = new Float32Array(buf.length / 2);
+
+        for (let tau = 1; tau < yinBuffer.length; tau++) {
+            let sum = 0;
+            for (let i = 0; i < yinBuffer.length; i++) {
+                const diff = buf[i] - buf[i + tau];
+                sum += diff * diff;
+            }
+            yinBuffer[tau] = sum;
+        }
+
+        yinBuffer[0] = 1;
+        let runningSum = 0;
+        for (let tau = 1; tau < yinBuffer.length; tau++) {
+            runningSum += yinBuffer[tau];
+            yinBuffer[tau] *= tau / runningSum;
+        }
+
+        let tauEstimate = -1;
+        for (let tau = 2; tau < yinBuffer.length; tau++) {
+            if (yinBuffer[tau] < threshold) {
+                tauEstimate = tau;
+                while (tau + 1 < yinBuffer.length &&
+                       yinBuffer[tau + 1] < yinBuffer[tau]) {
+                    tau++;
+                }
+                break;
+            }
+        }
+
+        if (tauEstimate === -1) return -1;
+
+        const x0 = tauEstimate < 1 ? tauEstimate : tauEstimate - 1;
+        const x2 = tauEstimate + 1 < yinBuffer.length ? tauEstimate + 1 : tauEstimate;
+
+        const s0 = yinBuffer[x0];
+        const s1 = yinBuffer[tauEstimate];
+        const s2 = yinBuffer[x2];
+
+        const betterTau = tauEstimate +
+            (s2 - s0) / (2 * (2 * s1 - s2 - s0));
+
+        return sampleRate / betterTau;
+    }
+
+    function update() {
+        analyser.getFloatTimeDomainData(buffer);
+        const freq = yin(buffer, audioContext.sampleRate);
+
+        const pitchEl = document.getElementById("pitch");
+        const statusEl = document.getElementById("status");
+        const slider = document.getElementById("sliderIndicator");
+        const target = parseFloat(document.getElementById("saSelect").value);
+
+        if (freq !== -1 && freq < 2000 && freq > 50) {
+            pitchEl.textContent = `Pitch: ${freq.toFixed(1)} Hz`;
+
+            const diff = freq - target;
+
+            if (Math.abs(diff) < 5) {
+                statusEl.textContent = "Very Good! Sa!";
+                statusEl.style.color = "green";
+            } else if (diff > 0) {
+                statusEl.textContent = "(TOO HIGH!) Khup tivra aahe, niche se gaanaa. He Sa naahi.";
+                statusEl.style.color = "red";
+            } else {
+                statusEl.textContent = "(TOO LOW!) Swar khup khali jaato, upar se gaanaa. He Sa naahi.";
+                statusEl.style.color = "red";
+            }
+
+            let normalized = Math.max(-50, Math.min(50, (diff / target) * 300));
+            slider.style.left = `${50 + normalized}%`;
+
+        } else {
+            pitchEl.textContent = "Pitch: --";
+            statusEl.textContent = "No Signal";
+            statusEl.style.color = "black";
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    update();
+}
+</script>
+
+</body>
+</html>
