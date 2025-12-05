@@ -138,6 +138,18 @@ select {
 let audioContextRef = null;
 let oscillator = null;
 
+// Moving average smoothing
+let smoothFreqs = [];
+const SMOOTH_WINDOW = 8;  // adjust 4–12 for preferred smoothness
+
+function smooth(value) {
+    smoothFreqs.push(value);
+    if (smoothFreqs.length > SMOOTH_WINDOW) {
+        smoothFreqs.shift();
+    }
+    return smoothFreqs.reduce((a,b)=>a+b, 0) / smoothFreqs.length;
+}
+
 // ----------------------
 // PLAY SA
 // ----------------------
@@ -148,7 +160,7 @@ function playSa() {
         audioContextRef = new (window.AudioContext || window.webkitAudioContext)();
     }
 
-    stopSa(); // prevent overlapping tones
+    stopSa(); 
 
     oscillator = audioContextRef.createOscillator();
     oscillator.frequency.value = freq;
@@ -161,9 +173,6 @@ function playSa() {
     oscillator.start();
 }
 
-// ----------------------
-// STOP SA
-// ----------------------
 function stopSa() {
     if (oscillator) {
         oscillator.stop();
@@ -209,8 +218,7 @@ async function start() {
         for (let tau = 2; tau < yinBuffer.length; tau++) {
             if (yinBuffer[tau] < threshold) {
                 tauEstimate = tau;
-                while (tau + 1 < yinBuffer.length &&
-                       yinBuffer[tau + 1] < yinBuffer[tau]) {
+                while (tau + 1 < yinBuffer.length && yinBuffer[tau + 1] < yinBuffer[tau]) {
                     tau++;
                 }
                 break;
@@ -226,22 +234,29 @@ async function start() {
         const s1 = yinBuffer[tauEstimate];
         const s2 = yinBuffer[x2];
 
-        const betterTau = tauEstimate +
-            (s2 - s0) / (2 * (2 * s1 - s2 - s0));
+        const betterTau =
+            tauEstimate + (s2 - s0) / (2 * (2 * s1 - s2 - s0));
 
         return sampleRate / betterTau;
     }
 
     function update() {
         analyser.getFloatTimeDomainData(buffer);
-        const freq = yin(buffer, audioContext.sampleRate);
+
+        const rawFreq = yin(buffer, audioContext.sampleRate);
+        let freq = -1;
+
+        // Only smooth valid readings
+        if (rawFreq !== -1 && rawFreq < 2000 && rawFreq > 50) {
+            freq = smooth(rawFreq);
+        }
 
         const pitchEl = document.getElementById("pitch");
         const statusEl = document.getElementById("status");
         const slider = document.getElementById("sliderIndicator");
         const target = parseFloat(document.getElementById("saSelect").value);
 
-        if (freq !== -1 && freq < 2000 && freq > 50) {
+        if (freq !== -1) {
             pitchEl.textContent = `Pitch: ${freq.toFixed(1)} Hz`;
 
             const diff = freq - target;
@@ -250,10 +265,10 @@ async function start() {
                 statusEl.textContent = "Very Good! Sa!";
                 statusEl.style.color = "green";
             } else if (diff > 0) {
-                statusEl.textContent = "(TOO HIGH!) Khup tivra aahe, niche se gaanaa. He Sa naahi.";
+                statusEl.textContent = "(TOO HIGH!) Khup tivra aahe.";
                 statusEl.style.color = "red";
             } else {
-                statusEl.textContent = "(TOO LOW!) Swar khup khali jaato, upar se gaanaa. He Sa naahi.";
+                statusEl.textContent = "(TOO LOW!) Swar khup khali.";
                 statusEl.style.color = "red";
             }
 
@@ -272,6 +287,7 @@ async function start() {
     update();
 }
 </script>
+
 
 </body>
 </html>
